@@ -27,10 +27,11 @@ const Hero = () => {
 
   return (
     <section 
+      id="top"
       ref={containerRef}
-      className="w-full min-h-screen flex items-center justify-center pt-20 px-6"
+      className="w-full min-h-screen flex items-center justify-center pt-20 px-6 md:px-12"
     >
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12" ref={textRef}>
+      <div className="max-w-screen-2xl w-full flex flex-col md:flex-row items-center gap-12" ref={textRef}>
         
         {/* Text Content */}
         <div className="flex-1 flex flex-col items-start gap-6">

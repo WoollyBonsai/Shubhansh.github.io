@@ -2,8 +2,8 @@ import { Github } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-12 px-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-black/40 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="w-full py-12 px-6 md:px-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-black/40 backdrop-blur-md">
+      <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
         <div className="flex flex-col items-center md:items-start gap-2">
           <span className="font-mono font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-500 dark:from-white dark:to-gray-400">

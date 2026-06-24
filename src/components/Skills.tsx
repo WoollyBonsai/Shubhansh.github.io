@@ -47,8 +47,8 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="w-full py-24 px-6 flex justify-center bg-slate-100 dark:bg-black/20">
-      <div className="max-w-6xl w-full" ref={containerRef}>
+    <section id="skills" className="w-full py-24 px-6 md:px-12 flex justify-center bg-slate-100 dark:bg-black/20">
+      <div className="max-w-screen-2xl w-full" ref={containerRef}>
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-slate-900 dark:text-white text-center">
           Technical Arsenal
         </h2>

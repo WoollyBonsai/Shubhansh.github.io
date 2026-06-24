@@ -32,8 +32,8 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={containerRef} className="w-full py-24 px-6 flex justify-center">
-      <div className="max-w-4xl w-full">
+    <section id="experience" ref={containerRef} className="w-full py-24 px-6 md:px-12 flex justify-center">
+      <div className="max-w-screen-xl w-full">
         <h2 className="text-3xl md:text-5xl font-bold mb-16 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-4 inline-block">
           Experience & Education
         </h2>

@@ -17,8 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] px-6 py-3">
+    <nav className="fixed top-0 left-0 w-full z-50 px-4 md:px-12 py-4 transition-all duration-300">
+      <div className="max-w-screen-2xl mx-auto flex items-center justify-between bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] px-6 py-3">
         
         {/* Left: Logo/Name */}
         <div className="flex flex-col">
@@ -37,6 +37,7 @@ const Navbar = () => {
 
         {/* Center: Links */}
         <div className="hidden md:flex items-center gap-8 font-mono text-sm">
+          <a href="#top" className="hover:text-blue-500 dark:hover:text-sky-400 transition-colors">About Me</a>
           <a href="#experience" className="hover:text-blue-500 dark:hover:text-sky-400 transition-colors">Experience</a>
           <a href="#projects" className="hover:text-blue-500 dark:hover:text-sky-400 transition-colors">Projects</a>
           <a href="#skills" className="hover:text-blue-500 dark:hover:text-sky-400 transition-colors">Skills</a>

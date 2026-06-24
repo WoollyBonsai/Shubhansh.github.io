@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { Sphere, Html, OrbitControls, Icosahedron, TorusKnot, Tetrahedron, Octahedron, Dodecahedron, Cylinder } from '@react-three/drei';
 import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -77,7 +77,7 @@ const Node = ({ project, position, onClick, isDark }: any) => {
   const [hovered, setHovered] = useState(false);
   const meshRef = useRef<THREE.Mesh>(null);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x += 0.01;
       meshRef.current.rotation.y += 0.01;
@@ -118,7 +118,6 @@ export const ProjectSphere = () => {
   const groupRef = useRef<THREE.Group>(null);
   const [activeProject, setActiveProject] = useState<any>(null);
   const controlsRef = useRef<any>(null);
-  const { camera } = useThree();
 
   // CAD Control Overrides: hold CTRL to pan
   useEffect(() => {
@@ -188,24 +187,24 @@ export const ProjectSphere = () => {
 
   return (
     <>
-      <ambientLight intensity={isDark ? 0.3 : 0.8} />
-      <directionalLight position={[10, 10, 10]} intensity={isDark ? 1.5 : 2} color={isDark ? "#ffffff" : "#e2e8f0"} />
-      <pointLight position={[-10, -10, -10]} color={isDark ? "#38bdf8" : "#3b82f6"} intensity={isDark ? 2 : 1} />
+      <ambientLight intensity={isDark ? 0.3 : 0.4} />
+      <directionalLight position={[10, 10, 10]} intensity={isDark ? 1.5 : 1.2} color={isDark ? "#ffffff" : "#cbd5e1"} />
+      <pointLight position={[-10, -10, -10]} color={isDark ? "#38bdf8" : "#2563eb"} intensity={isDark ? 2 : 1.5} />
       
       <group ref={groupRef}>
         <Sphere args={[radius - 0.2, 32, 32]}>
           <meshStandardMaterial 
-            color={isDark ? "#0f172a" : "#f1f5f9"} 
+            color={isDark ? "#0f172a" : "#475569"} 
             wireframe 
             transparent 
-            opacity={isDark ? 0.15 : 0.3} 
+            opacity={isDark ? 0.15 : 0.4} 
           />
         </Sphere>
         
         {/* Core Particle effects */}
         <points>
           <sphereGeometry args={[radius - 0.5, 48, 48]} />
-          <pointsMaterial color={isDark ? "#38bdf8" : "#3b82f6"} size={0.02} transparent opacity={0.3} />
+          <pointsMaterial color={isDark ? "#38bdf8" : "#1d4ed8"} size={0.02} transparent opacity={isDark ? 0.3 : 0.6} />
         </points>
 
         {nodes.map((node, i) => (
@@ -221,6 +220,8 @@ export const ProjectSphere = () => {
         enableDamping={true}
         dampingFactor={0.05}
         autoRotate={false}
+        minPolarAngle={-Math.PI}
+        maxPolarAngle={Math.PI * 2}
         mouseButtons={{
           LEFT: THREE.MOUSE.ROTATE,
           MIDDLE: THREE.MOUSE.DOLLY,
